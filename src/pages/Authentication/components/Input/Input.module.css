@@ -1,0 +1,43 @@
+.input label {
+  margin: 0.4rem 0;
+  color: black;
+  display: block;
+  font-weight: normal;
+  font-size: medium;
+}
+
+.input input {
+  width: 15rem;
+  outline: transparent;
+  border-radius: 5px;
+  border: 1.5px solid #dfdfdf;
+  font: inherit;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input input:focus,
+.input input:active {
+  border: 1.5px solid #b0cdb0;
+  /* #b0cdb0; */
+  /* #cde1f1; */
+}
+
+.input input::placeholder {
+  color: #858985;
+  font-size: small;
+}
+
+.error p {
+  color: crimson;
+  margin: -0.03rem 0 0.9rem 0;
+  font-size: small;
+}
+
+.error input {
+  border-radius: 5px;
+  border: 1px solid crimson;
+  font: inherit;
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+}

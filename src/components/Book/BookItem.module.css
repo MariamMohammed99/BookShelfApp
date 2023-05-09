@@ -1,0 +1,84 @@
+.book {
+  width: 140px;
+}
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+.book-title {
+  margin-top: 10px;
+}
+.book-authors {
+  color: #999;
+}
+h4 {
+  width: 140px;
+  font-size: small;
+  text-align: start;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #60ac5d;
+  background-image: url("../../icons/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.book-cover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: #eee;
+}
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0 0 0;
+}
+img {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  height: 174px;
+  width: 128px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: #eee;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 0;
+}
+button {
+  border-color: #60ac5d;
+  border-radius: 5px;
+  background-color: #60ac5d;
+  color: white;
+  box-shadow: none;
+}

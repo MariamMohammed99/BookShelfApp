@@ -1,0 +1,32 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  /* #e8e8e8; */
+}
+.form-button {
+  width: 100%;
+}
+.form {
+  padding: 1rem 2rem;
+  background-color: #d9e6d9;
+  border-radius: 8px;
+  margin: 2rem 0;
+  height: fit-content;
+  box-shadow: 1px 1px 5px 1px #cacbca;
+  width: fit-content;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer a {
+  font-size: small;
+  color: #1e5120;
+}
+.footer p {
+  margin: 0.5rem 0 0 0;
+  font-size: small;
+  color: #6e726e;
+}
