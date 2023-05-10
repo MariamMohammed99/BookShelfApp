@@ -17,8 +17,8 @@ const LoginForm = () => {
   });
   const [validationError, setValidationError] = useState(initialValidation);
   const [submitForm, setSubmitForm] = useState(false);
-  const [formIsValid, setFormIsValid] = useState(false);
-
+  // const [formIsValid, setFormIsValid] = useState(false);
+  let formIsValid = false;
   const navigate = useNavigate();
 
   const validation = (data: LoginUser) => {
@@ -36,11 +36,13 @@ const LoginForm = () => {
         passwordHasError,
         emailHasError,
       });
-      setFormIsValid(false);
+      // setFormIsValid(false);
+      formIsValid = false;
       return;
     }
     setValidationError(initialValidation);
-    setFormIsValid(true);
+    // setFormIsValid(true);
+    formIsValid = true;
   };
 
   const valueChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +76,7 @@ const LoginForm = () => {
         <Input
           input={{
             label: "Email",
-            type: "email",
+            type: "textbox",
             value: state.email,
             name: "email",
             onChange: valueChangeHandler,
@@ -97,7 +99,6 @@ const LoginForm = () => {
           input={{
             className: classes["form-button"],
             actionName: "Login",
-            onClick: submitHandler,
             isSubmit: true,
           }}
         />

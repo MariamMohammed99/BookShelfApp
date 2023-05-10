@@ -21,9 +21,6 @@ const BookItem: React.FC<{
       .unwrap()
       .then(() => {})
       .then(() => {});
-    // .then((error) => {
-    //   console.log(error);
-    // });
   };
   const imageUrl =
     book.imageLinks && book.imageLinks.thumbnail

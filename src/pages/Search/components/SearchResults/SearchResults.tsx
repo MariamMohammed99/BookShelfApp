@@ -24,18 +24,19 @@ const SearchResults: React.FC<{ searchProps: SearchResultsProps }> = ({
     }
   }, [searchTerm]);
   useEffect(() => {
-    if (booksInMain && data && data?.books) {
-      // const finalList: Book[] = [];
+    if (booksInMain && data) {
+      if (data?.books.length > 0) {
+        const finalList: Book[] = data?.books.map((eachBookInSearch: Book) => {
+          const bookFound = booksInMain.find(
+            (eachBookInMain: Book) => eachBookInSearch.id === eachBookInMain.id,
+          );
 
-      const finalList: Book[] = data?.books.map((eachBookInSearch: Book) => {
-        const bookFound = booksInMain.find(
-          (eachBookInMain: Book) => eachBookInSearch.id === eachBookInMain.id,
-        );
-
-        return bookFound ? { ...bookFound } : { ...eachBookInSearch };
-      });
-
-      setBooksInSearch(finalList);
+          return bookFound ? { ...bookFound } : { ...eachBookInSearch };
+        });
+        setBooksInSearch(finalList);
+      } else {
+        setBooksInSearch([]);
+      }
     }
   }, [booksInMain, data]);
   if (isLoading) {
@@ -52,14 +53,14 @@ const SearchResults: React.FC<{ searchProps: SearchResultsProps }> = ({
   return (
     <div className={classes["search-books-results"]}>
       <ol className={classes["books-grid"]}>
-        {booksInSearch &&
+        {booksInSearch.length > 0 &&
           booksInSearch.map((book) => (
             <li key={book.id}>
               <BookItem book={book} />
             </li>
           ))}
       </ol>
-      {!booksInSearch && <h1>No Books were found</h1>}
+      {booksInSearch.length <= 0 && <h1>No Books were found</h1>}
     </div>
   );
 };

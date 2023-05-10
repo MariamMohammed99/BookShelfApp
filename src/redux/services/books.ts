@@ -8,13 +8,9 @@ import {
 
 const baseUrl = "https://reactnd-books-api.udacity.com/";
 
-// let token = localStorage.token;
-// // if (!token) token = localStorage.token = Math.random().toString(36).substr(-8);
-const token = localStorage.getItem("token");
-
-const headers = {
-  Accept: "application/json",
-  Authorization: token || "",
+const handleToken = (): { Accept: string; Authorization: string } => {
+  const token = localStorage.getItem("token");
+  return { Accept: "application/json", Authorization: token || "" };
 };
 
 export const booksApi = createApi({
@@ -27,7 +23,7 @@ export const booksApi = createApi({
       query: () => ({
         url: "books",
         method: "GET",
-        headers,
+        headers: handleToken(),
       }),
       providesTags: ["Book"],
     }),
@@ -37,7 +33,7 @@ export const booksApi = createApi({
         method: "POST",
         body,
         headers: {
-          ...headers,
+          ...handleToken(),
           "Content-Type": "application/json",
         },
       }),
@@ -46,9 +42,9 @@ export const booksApi = createApi({
     getBook: build.query<BookResponse, string>({
       query: (id) => ({
         url: `books/${id}`,
-        headers,
+        headers: handleToken(),
       }),
-      providesTags: ["Book"], // (result, error, id) => [{ type: "Book", id }],
+      providesTags: ["Book"],
     }),
     editBook: build.mutation<void, Pick<Book, "id"> & Partial<Book>>({
       query: ({ id, ...patch }) => ({
@@ -56,11 +52,11 @@ export const booksApi = createApi({
         method: "PUT",
         body: patch,
         headers: {
-          ...headers,
+          ...handleToken(),
           "Content-Type": "application/json",
         },
       }),
-      invalidatesTags: ["Book"], // (result, error, { id }) => [{ type: "Book", id }],
+      invalidatesTags: ["Book"],
     }),
   }),
 });

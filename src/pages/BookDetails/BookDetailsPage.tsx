@@ -5,12 +5,12 @@ import { useGetBookQuery } from "../../redux/services/books";
 
 const BookDetailsPage = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    const token = localStorage.getItem("token");
     if (!token) {
       navigate("login");
     }
-  }, [navigate]);
+  }, [navigate, token]);
   const params = useParams();
   const { data, isLoading } = useGetBookQuery(params.id!);
   if (isLoading) {

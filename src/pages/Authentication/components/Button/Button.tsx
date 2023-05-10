@@ -8,7 +8,7 @@ const Button: React.FC<{ input: ButtonInput }> = ({ input }) => {
       type={input.isSubmit ? "submit" : "button"}
       onClick={input.onClick}
       className={`${classes.button} ${input.className}`}
-      name="input.actionName"
+      name={input.actionName}
     >
       {input.actionName}
     </button>

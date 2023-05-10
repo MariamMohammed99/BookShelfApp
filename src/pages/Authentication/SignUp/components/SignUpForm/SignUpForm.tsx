@@ -27,8 +27,8 @@ const SignUpForm = () => {
   });
   const [validationError, setValidationError] = useState(initialValidation);
   const [submitForm, setSubmitForm] = useState(false);
-  const [formIsValid, setFormIsValid] = useState(false);
-
+  // const [formIsValid, setFormIsValid] = useState(false);
+  let formIsValid = false;
   const navigate = useNavigate();
 
   const validation = (data: SignUpUser) => {
@@ -60,11 +60,13 @@ const SignUpForm = () => {
         nameHasError,
         retypedPasswordHasError,
       });
-      setFormIsValid(false);
+      // setFormIsValid(false);
+      formIsValid = false;
       return;
     }
     setValidationError(initialValidation);
-    setFormIsValid(true);
+    // setFormIsValid(true);
+    formIsValid = true;
   };
 
   const valueChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +111,7 @@ const SignUpForm = () => {
         <Input
           input={{
             label: "Email",
-            type: "email",
+            type: "text",
             value: state.email,
             name: "email",
             onChange: valueChangeHandler,
@@ -143,7 +145,6 @@ const SignUpForm = () => {
           input={{
             className: classes["form-button"],
             actionName: "Sign Up",
-            onClick: submitHandler,
             isSubmit: true,
           }}
         />

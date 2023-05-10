@@ -59,9 +59,6 @@ const Main: React.FC<{ booksList: Book[] }> = ({ booksList }) => {
       .unwrap()
       .then(() => {})
       .then(() => {});
-    // .then((error) => {
-    //   console.log(error);
-    // });
   };
 
   return (

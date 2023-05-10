@@ -19,8 +19,6 @@
 .input input:focus,
 .input input:active {
   border: 1.5px solid #b0cdb0;
-  /* #b0cdb0; */
-  /* #cde1f1; */
 }
 
 .input input::placeholder {

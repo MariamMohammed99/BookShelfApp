@@ -6,14 +6,13 @@ import Main from "./components/Main/Main";
 
 function MainPage() {
   const navigate = useNavigate();
+  const { data, isLoading } = useGetBooksQuery();
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    const token = localStorage.getItem("token");
     if (!token) {
       navigate("login");
     }
-  }, [navigate]);
-
-  const { data, isLoading } = useGetBooksQuery();
+  }, [navigate, token]);
 
   if (isLoading) {
     return (
