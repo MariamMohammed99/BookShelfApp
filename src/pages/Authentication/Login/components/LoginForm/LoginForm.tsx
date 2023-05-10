@@ -17,7 +17,6 @@ const LoginForm = () => {
   });
   const [validationError, setValidationError] = useState(initialValidation);
   const [submitForm, setSubmitForm] = useState(false);
-  // const [formIsValid, setFormIsValid] = useState(false);
   let formIsValid = false;
   const navigate = useNavigate();
 
@@ -36,12 +35,10 @@ const LoginForm = () => {
         passwordHasError,
         emailHasError,
       });
-      // setFormIsValid(false);
       formIsValid = false;
       return;
     }
     setValidationError(initialValidation);
-    // setFormIsValid(true);
     formIsValid = true;
   };
 
@@ -62,12 +59,11 @@ const LoginForm = () => {
     event.preventDefault();
     validation(state);
     setSubmitForm(true);
-    if (!formIsValid) {
-      return;
+    if (formIsValid) {
+      const token = state.email + state.password;
+      localStorage.setItem("token", token);
+      navigate("/");
     }
-    const token = state.email + state.password;
-    localStorage.setItem("token", token);
-    navigate("/");
   };
 
   return (

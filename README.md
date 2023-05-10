@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Books Shelf App (My Reader)
+Welcome to the Books Shelf App (My Reader)! This application is designed to help you organize and categorize your book collection based on whether you want to read a book, have already read it, or are currently reading it. Additionally, the app provides a search feature to easily find specific books in your collection. This readme file will guide you through the features and functionalities of the app.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an assignment from Udacity. You can find the assignment details and rubric here: https://auth.udacity.com/sign-in?next=https%3A%2F%2Freview.udacity.com%2F%23!%2Frubrics%2F3624%2Fview
 
-## Available Scripts
+# Table of Contents
+Installation
+Usage
+Features
+Search
 
-In the project directory, you can run:
+# Installation
+To use the Books Shelf App, you need to follow these steps:
 
-### `npm start`
+Clone the repository to your local machine.
+bash
+Copy code
+git clone https://github.com/your-username/books-shelf-app.git
+Navigate to the project directory.
+bash
+Copy code
+cd books-shelf-app
+Install the necessary dependencies.
+Copy code
+npm install
+Usage
+Once you have completed the installation process, you can start using the Books Shelf App.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Launch the app by running the following command:
+npm start
+http://localhost:3000
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will be presented with the Books Shelf App interface.
 
-### `npm test`
+# Features
+## Categorizing Books
+Books Shelf App allows you to categorize each book into one of the following three categories:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Want To Read: 
+This category is used for books that you plan to read in the future.
+### Read: 
+Use this category to mark books that you have already read.
+### Currently Reading:
+This category is for books that you are currently reading.
+To change the category of a book, simply click on the book cover and select the desired category from the dropdown menu.
 
-### `npm run build`
+## Search
+Books Shelf App provides a search feature that allows you to quickly find specific books in your collection. To use the search functionality:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Locate the search bar at the top of the app interface.
+Enter the title, author, or any keyword related to the book you want to find.
+As you type, the app will automatically filter and display the matching results.
